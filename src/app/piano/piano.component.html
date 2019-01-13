@@ -1,0 +1,47 @@
+<!-- <div>
+<ul class="set">
+  <li class="white b"></li>
+  <li class="black as"></li>
+  <li class="white a"></li>
+  <li class="black gs"></li>
+  <li class="white g"></li>
+  <li class="black fs"></li>
+  <li class="white f"></li>
+  <li class="white e"></li>
+  	<li class="black ds"></li>
+	  <li class="white d"></li>
+	  <li class="black cs"></li>
+	  <li class="white c"></li>
+</ul>
+</div> -->
+
+<!-- https://stackblitz.com/edit/angular-tone?file=app%2Fhello.component.ts -->
+
+<p>
+  <button (click)="chorus()">Chorus</button>
+  <button (click)="phaser()">Phaser</button>
+</p>
+
+<form [formGroup]="soundForm">
+  <input type="radio" formControlName="sound" value="normal" (click)="setNormal()" > Normal<br>
+  <input type="radio" formControlName="sound" value="chorus" (click)="setChorus()"> Chorus<br>
+  <input type="radio" formControlName="sound" value="phaser" (click)="setPhaser()"> Phaser<br>
+</form>
+<input matInput type="number" placeholder="Value" [(ngModel)]="value">
+<mat-slider min="1" max="64" step="1" [(ngModel)]="value" thumbLabel = true ></mat-slider>
+
+<button (click)="checkSound()"> CheckSound</button>
+<h1>Key pulsed: {{note}}</h1>
+<app-scores [note]="note" [duration]="value" (notePulsed)="testFunction()"></app-scores>
+
+
+
+
+<div class="piano">
+  <div class="octive" *ngFor="let o of octives; let lst = last;">
+    <span class="octive-num">{{o}}</span>
+    <div class="key" *ngFor="let key of notes; " (mouseover)="msover(key+o)" (mousedown)="msdown=true;play(key+o);" (mouseup)="msdown=false" [ngClass]="{'sharp':( key.indexOf('#') >= 1), 'last':lst}">
+    {{key}}
+    </div>
+  </div>
+</div>
