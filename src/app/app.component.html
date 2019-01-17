@@ -4,7 +4,8 @@
     {{ title }}!
   </h1>
   <div>
-    <app-piano></app-piano>
+    <app-scores [note]="piano.note" [duration]="piano.value" #scores></app-scores>
+    <app-piano #piano (notePulsed)="scores.testFunction(piano.note)"></app-piano>
   </div>
 
 

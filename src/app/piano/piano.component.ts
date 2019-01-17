@@ -13,6 +13,7 @@ import * as Tone from 'tone'; //npm install tone
 })
 export class PianoComponent implements OnInit {
   @Output() notePulsed = new EventEmitter();
+  
   name = 'Angular Tone.js';
   synth:any;
   notes:string[] = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
@@ -20,7 +21,8 @@ export class PianoComponent implements OnInit {
   soundForm: FormGroup;
   value: number = 10;
   msdown:boolean = false;
-  note:string;
+  @Output() note:string;
+  @Output() duration:string;
 
   constructor() {
     
@@ -94,8 +96,8 @@ export class PianoComponent implements OnInit {
 
   play(note){
      //this.synth.triggerAttackRelease(["C3","E3","G3"], "8n");
-     let duration: string = this.value.toString() + "n";
-     this.synth.triggerAttackRelease(note,duration);
+     this.duration= this.value.toString() + "n";
+     this.synth.triggerAttackRelease(note, this.duration);
      console.log("Nota: ", note);
      this.note = note;
      this.notePulsed.emit(null);

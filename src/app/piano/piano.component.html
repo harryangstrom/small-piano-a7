@@ -32,7 +32,7 @@
 
 <button (click)="checkSound()"> CheckSound</button>
 <h1>Key pulsed: {{note}}</h1>
-<app-scores [note]="note" [duration]="value" (notePulsed)="testFunction()"></app-scores>
+<!-- <app-scores [note]="note" [duration]="value" (notePulsed)="testFunction()"></app-scores> -->
 
 
 
@@ -40,7 +40,11 @@
 <div class="piano">
   <div class="octive" *ngFor="let o of octives; let lst = last;">
     <span class="octive-num">{{o}}</span>
-    <div class="key" *ngFor="let key of notes; " (mouseover)="msover(key+o)" (mousedown)="msdown=true;play(key+o);" (mouseup)="msdown=false" [ngClass]="{'sharp':( key.indexOf('#') >= 1), 'last':lst}">
+    <div class="key" *ngFor="let key of notes; " 
+        (mouseover)="msover(key+o)" 
+        (mousedown)="msdown=true;play(key+o);" 
+        (mouseup)="msdown=false" 
+        [ngClass]="{'sharp':( key.indexOf('#') >= 1), 'last':lst}">
     {{key}}
     </div>
   </div>
