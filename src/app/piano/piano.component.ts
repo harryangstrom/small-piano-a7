@@ -98,7 +98,7 @@ export class PianoComponent implements OnInit {
      //this.synth.triggerAttackRelease(["C3","E3","G3"], "8n");
      this.duration= this.value.toString() + "n";
      this.synth.triggerAttackRelease(note, this.duration);
-     console.log("Nota: ", note);
+//     console.log("Nota: ", note);
      this.note = note;
      this.notePulsed.emit(null);
       //this.synth.triggerAttackRelease([note], "2n");

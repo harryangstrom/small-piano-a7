@@ -17,11 +17,11 @@
 
 <!-- https://stackblitz.com/edit/angular-tone?file=app%2Fhello.component.ts -->
 
-<p>
+<!-- <p>
   <button (click)="chorus()">Chorus</button>
   <button (click)="phaser()">Phaser</button>
-</p>
-
+</p> -->
+<!-- 
 <form [formGroup]="soundForm">
   <input type="radio" formControlName="sound" value="normal" (click)="setNormal()" > Normal<br>
   <input type="radio" formControlName="sound" value="chorus" (click)="setChorus()"> Chorus<br>
@@ -30,13 +30,9 @@
 <input matInput type="number" placeholder="Value" [(ngModel)]="value">
 <mat-slider min="1" max="64" step="1" [(ngModel)]="value" thumbLabel = true ></mat-slider>
 
-<button (click)="checkSound()"> CheckSound</button>
-<h1>Key pulsed: {{note}}</h1>
+<button (click)="checkSound()"> CheckSound</button> -->
+<!-- <h1>Key pulsed: {{note}}</h1> -->
 <!-- <app-scores [note]="note" [duration]="value" (notePulsed)="testFunction()"></app-scores> -->
-
-
-
-
 <div class="piano">
   <div class="octive" *ngFor="let o of octives; let lst = last;">
     <span class="octive-num">{{o}}</span>

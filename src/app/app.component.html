@@ -5,7 +5,7 @@
   </h1>
   <div>
     <app-scores [note]="piano.note" [duration]="piano.value" #scores></app-scores>
-    <app-piano #piano (notePulsed)="scores.testFunction(piano.note)"></app-piano>
+    <app-piano #piano (notePulsed)="scores.drawNote(piano.note)"></app-piano>
   </div>
 
 
