@@ -17,7 +17,8 @@ export class PianoComponent implements OnInit {
   name = 'Angular Tone.js';
   synth:any;
   notes:string[] = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
-  octives:number[] = [1,2,3,4,5,6];
+  notesOct3:string[] = ["F","F#","G","G#","A","A#","B"];
+  octives:number[] = [3,4,5];
   soundForm: FormGroup;
   value: number = 10;
   msdown:boolean = false;

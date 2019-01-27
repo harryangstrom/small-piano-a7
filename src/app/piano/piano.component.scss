@@ -1,6 +1,7 @@
 .piano{
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   position: relative;
   top: 10px;
   left: 250px;
@@ -42,14 +43,14 @@
     background: #999;
     cursor: pointer;
   }
-
+/* 
   &.playing{
 
   }
 
   &.sharp{
 
-  }
+  } */
 }
 
 .example-h2 {
